@@ -21,7 +21,7 @@ function boxProgram() {
         while (moveStep <= numberOfStep) {
             console.log('right')
             moveStep--
-            box.style.left = moveStep + 'px'
+            box.style.right = moveStep + 'px'
         }
     }
 }
