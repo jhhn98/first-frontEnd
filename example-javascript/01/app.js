@@ -13,15 +13,17 @@ function boxProgram() {
         console.log('left??')
         while (moveStep <= numberOfStep) {
             console.log('left')
-            moveStep++
+            moveStep--
             box.style.left = moveStep + 'px'
         }
     } else if (direction === 'right') {
         console.log('right??')
         while (moveStep <= numberOfStep) {
             console.log('right')
-            moveStep--
-            box.style.right = moveStep + 'px'
+            console.log(numberOfStep)
+            moveStep++
+            console.log(moveStep)
+            box.style.left = moveStep + 'px'
         }
     }
 }
