@@ -1,36 +1,38 @@
+let currentLeftBoxPosition = 100;
 let numberOfStep = 10
 let direction = 'left'
 
 let box
 
 function boxProgram() {
-    numberOfStep = prompt('몇걸음 걸을까요?')
+    numberOfStep = parseInt(prompt('몇걸음 걸을까요?'))
     direction = prompt('어느쪽으로 걸을까요?')
 
     let moveStep = 1
 
     if (direction === 'left') {
-        console.log('left??')
-        while (moveStep <= numberOfStep) {
-            console.log('left')
-            moveStep--
-            box.style.left = moveStep + 'px'
+        while (moveStep <  numberOfStep) {
+            moveStep ++
+            box.style.left = (currentLeftBoxPosition - moveStep) + 'px'
         }
+        currentLeftBoxPosition = currentLeftBoxPosition - moveStep
     } else if (direction === 'right') {
-        console.log('right??')
-        while (moveStep <= numberOfStep) {
-            console.log('right')
-            console.log(numberOfStep)
-            moveStep++
+        while (moveStep < numberOfStep) {
+            console.log(currentLeftBoxPosition)
             console.log(moveStep)
-            box.style.left = moveStep + 'px'
+            moveStep ++
+            box.style.left = (currentLeftBoxPosition + moveStep) + 'px'
         }
+        currentLeftBoxPosition = currentLeftBoxPosition + moveStep
+    } else {
+        console.error();
     }
 }
 
 function main() {
     box = document.querySelector('#box' )
 
+    box.style.left = currentLeftBoxPosition + 'px'
     box.addEventListener('click', boxProgram)
 }
 
