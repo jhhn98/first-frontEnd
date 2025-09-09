@@ -1,5 +1,5 @@
 import * as Utils from './util.js'
-
+//모듈화 * as Utils는 한 모듈에서 가져올 값이 여러개일 경우 모두를 뜻하는 *와 모듈의 이름을 내가 지어주어야한다. 그러면 Utils.머머머 이렇게 쓸 수 있다. 아래처럼!!
 console.log(Utils.AppleName)
 console.log(Utils.CarName)
 console.log(Utils.Sum(1, 2, 3))
@@ -192,9 +192,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+class Dog {
+    constructor( name, age ) {
+        this.name = name // 인스턴스 속성
+        this.age = age // 인스턴스 속성
+    }
+    bark() {
+        console.log(`${this.name} 멍멍 짖는다!!!!!`)
+    }
+}
 
-
-
+const myDog = new Dog('하늘', 5) // Dog의 인스턴스, constructor 실행됨
+const sisterDog = new Dog('시월', 3) // Dog의 인스턴스, constructor 실행됨
+//인스턴스라는건 선언한 class(틀, 설계도)로 만들어진 실제 개체. class로 틀을 만들고 new 연산자로 알맹이를 집어넣는다. 이때 this는 만들어지고 있는 개체 자신!
+console.log(myDog.name)
+console.log(sisterDog.name)
+myDog.bark()
+sisterDog.bark()
 
 
 
